@@ -3,9 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  base: "/portfolio/", // <-- Use "/portfolio/" instead of "/folio/"
+export default defineConfig(({ mode }) => ({
+  base: "/portfolio/", // <-- THIS IS CRUCIAL
   server: {
     host: "::",
     port: 8080,
@@ -19,4 +18,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-});
+}));
